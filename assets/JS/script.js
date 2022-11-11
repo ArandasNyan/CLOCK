@@ -8,19 +8,11 @@ const clock = setInterval(function time() {
     let minute = dateToday.getMinutes()
     let second = dateToday.getSeconds()
 
-    if(hour >= 0 && hour <= 9 ) {
-        hour = '0' + hour;
-    }
+    let timeInHour = hour >= 0 && hour <= 9 ? '0' + hour : hour
+    let timeInMinute = minute >= 0 && minute <= 9 ? '0' + minute : minute
+    let timeInSecond = second >= 0 && second <= 9 ? '0' + second : second
 
-    if(minute >= 0 && minute <= 9) {
-        minute = '0' + minute;
-    }
-
-    if(second >= 0 && second <= 9) {
-        second = '0' + second;
-    }
-
-    hours.textContent = hour;
-    minutes.textContent = minute;
-    seconds.textContent = second;
+    hours.textContent = timeInHour;
+    minutes.textContent = timeInMinute;
+    seconds.textContent = timeInSecond;
 })
